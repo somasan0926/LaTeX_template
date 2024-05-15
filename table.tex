@@ -1,0 +1,27 @@
+\begin{table} [H] 
+\caption{}
+\centering
+\begin{tabular}{}\\ \hline
+
+\end{tabular}
+\label{}  
+\end{table}
+
+tableを使うと表の作成ができる。
+下の例みたいに書くとmain.texの表１と同じものができる
+
+\begin{table} [H] %表の書式とかを決めるよ
+\caption{あ}  %表のタイトルを入力
+\centering %中央揃え
+\begin{tabular}{rr}\\ \hline %ここから表の中身書き始めるよ
+あ&い\\ \hline 要素同士は&で区切る
+う&え\\ 
+お&か\\ \hline
+\end{tabular}
+\label{table} %表のラベル付けだよ、\ref{table}って書くとこの表を参照できるよ
+\end{table}
+
+こまかいもろもろ
+・[H]は表をここに入れるぜっていう合図、順番がぐちゃぐちゃにならない [h][t]とかのオプションもある
+・ \hlineって書くとその行の下に横線引けるよ、もっかい書くともう１本引けるよ
+・18行目「rr」は「この表には要素が2個あってどっちも右揃えだよ」の意味、lは左詰めでcは中央揃えだから要素が4個で全部左揃えにしたかったらllllだね
