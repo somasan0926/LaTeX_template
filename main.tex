@@ -1,0 +1,107 @@
+\documentclass[11pt, a4paper]{jsarticle}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{here}
+\usepackage{listings,jvlisting} 
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\geometry{left=25mm,right=25mm,top=25mm,bottom=30mm}
+
+%ここまではライブラリ（？）とか文書の様式とか。よくわかってない。とりあえずコピペしとけ
+
+\title{
+ここにタイトルを入れる}
+\author{
+学修番号とか氏名とか入れようね
+}
+\renewcommand{\lstlistingname}{コード} %lstlistingのところで解説
+\begin{document} %\begin{document}から\end{document}までに文章を書くこと
+\date{提出日とか入れようね}
+\maketitle
+\section{section} %\section{}って書くと新しい段落がつくれる。勝手に段落番号振ってくれて便利だね
+あ
+
+\section{itemize}
+\begin{itemize} %itemize.tex読んでくれ
+\item[(1)]あ
+\item[(2)] い
+\end{itemize}
+
+\section{subsection}
+\subsection{subsection} %\subsection{}って書くと段落の中でさらに分けれる。勝手に段落番号振ってくれて便利だね
+
+\section{table}
+表\ref{table}に表を示す． %\ref{}って書くとついてるラベルの表やら式やら図やらを引用できるよ
+\begin{table} [H] %table.tex読んでくれ
+\caption{あ} 
+\centering
+\begin{tabular}{rr}\\ \hline
+あ&い\\ \hline
+う&え\\ 
+お&か\\ \hline
+\end{tabular}
+\label{table}  
+\end{table}
+
+\section{figure}
+図\ref{picture}に図を示す. %figure.tex読んでくれ
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.3\linewidth]{picture.jpg}
+\caption{picture}
+\label{picture}
+\end{figure}
+
+\section{equation} %equation.tex読んでくれ
+式\ref{eq:1}に式を示す.
+\begin{equation}
+\label{eq:1}
+ax^2 + bx + c = 0
+\end{equation}
+
+式\ref{eq:2}に式を示す.
+\begin{align}
+\label{eq:2}
+a \left(x^2 + \frac{b}{a}x \right) + c &= 0\\
+a \left(x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} \right) - \frac{b^2}{4a} + c &= 0
+\end{align}
+
+\section{lstlisting}
+コード\ref{lstlisting}にコードを示す
+\begin{lstlisting}[caption=code.cpp,label=lstlisting]
+#include <iostream>
+using namesoace std;
+
+int main(){
+    cout << "Hello World" << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\bibliographystyle{junsrt} 
+\begin{thebibliography}{99}
+    \bibitem{thebibliography} \LaTeX 概論
+\end{thebibliography}
+
+\end{document}
